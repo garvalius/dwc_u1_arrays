@@ -1,21 +1,26 @@
 // @ts-nocheck
-let button1 = document.getElementById("Ejercicio_1_button");
-button1.addEventListener("click", makeExercise);
+let button2 = document.getElementById("Ejercicio_2_button");
+button2.addEventListener("click", makeExercise);
+
 
 
 function makeExercise() {
     const COLUMNS = 5;
     const ROWS = 3;
 
+
     print2DArray(makeArray(COLUMNS, ROWS));
 
     function makeArray(columns, rows) {
-        let outputArray = Array.from(Array(rows), () => new Array(columns));
+        let outputArray = [];
         for (let rowNumber = 0; rowNumber < rows; rowNumber++) {
+            let columnArray = [];
             for (let columnNumber = 0; columnNumber < columns; columnNumber++) {
-                outputArray[rowNumber][columnNumber] = 'f' + (rowNumber + 1) + 'c' + (columnNumber + 1);
-            }
 
+                columnArray.push('f' + (rowNumber + 1) + 'c' + (columnNumber + 1));
+
+            }
+            outputArray.push(columnArray);
         }
 
         return outputArray;
@@ -34,4 +39,7 @@ function makeExercise() {
 
 
 }
+
+
+
 
