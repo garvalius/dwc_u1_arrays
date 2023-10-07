@@ -35,7 +35,8 @@ function makeExercise() {
     }
 
     function numberIsInArray(number) {
-        return generatedNumbersArray.find((e) => e == number) != undefined;
+        return generatedNumbersArray.includes(number);
+
     }
 
     function generateRandomIntegerNumber(highLimit, lowLimit) {
